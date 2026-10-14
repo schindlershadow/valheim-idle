@@ -1,0 +1,7 @@
+[Unit]
+Description=Stop Valheim when empty
+
+[Service]
+Type=oneshot
+Environment=VALHEIM_SERVER_DIR=%h/valheim-server
+ExecStart=/usr/bin/python3 %h/valheim-idle/idle-check.py

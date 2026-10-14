@@ -1,0 +1,10 @@
+state.json
+.lock
+venv/
+__pycache__/
+*.bak*
+*.log
+.env*
+*token*
+*webhook*
+*password*

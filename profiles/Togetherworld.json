@@ -1,0 +1,22 @@
+{
+  "modifiers": {
+    "Combat": "Hard",
+    "DeathPenalty": "Casual",
+    "Resources": "Most",
+    "Raids": "MuchMore",
+    "Portals": "Casual"
+  },
+  "keys": {
+    "PlayerDamage": "100",
+    "EnemyDamage": "150",
+    "ResourceRate": "300",
+    "SkillReductionRate": "0",
+    "TeleportAll": "True",
+    "DeathKeepInventory": "False",
+    "DeathSkillsReset": "False"
+  },
+  "extra": {
+    "MaxLevelIncrease": "2"
+  },
+  "description": "Game with Itani kids"
+}

@@ -1,0 +1,22 @@
+[Unit]
+Description=Valheim dedicated server (BepInEx)
+Conflicts=valheim-wake.service
+After=network-online.target
+
+[Service]
+WorkingDirectory=%h/valheim-server
+Environment=VALHEIM_SERVER_DIR=%h/valheim-server
+ExecStart=/bin/sh %h/valheim-idle/start.sh
+UnsetEnvironment=DISPLAY WAYLAND_DISPLAY
+ExecStopPost=/bin/sh -c 'systemctl --user list-jobs --no-legend | grep -Eq "valheim.service +(re)?start" || systemctl --user start --no-block valheim-wake.service'
+KillSignal=SIGINT
+TimeoutStopSec=120
+SuccessExitStatus=0 130 143 SIGINT SIGTERM
+Restart=on-failure
+RestartSec=20
+Nice=19
+CPUWeight=20
+CPUQuota=400%
+
+[Install]
+WantedBy=default.target

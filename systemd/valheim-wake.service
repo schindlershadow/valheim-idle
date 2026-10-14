@@ -1,0 +1,7 @@
+[Unit]
+Description=Wake Valheim server on join attempt
+Conflicts=valheim.service
+
+[Service]
+ExecStart=/usr/bin/python3 %h/valheim-idle/wake.py
+Restart=on-failure

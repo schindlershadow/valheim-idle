@@ -1,0 +1,13 @@
+[Unit]
+Description=Valheim world control Discord bot
+After=network-online.target
+
+[Service]
+WorkingDirectory=%h/valheim-idle
+Environment=VALHEIM_SERVER_DIR=%h/valheim-server
+ExecStart=%h/valheim-idle/venv/bin/python %h/valheim-idle/bot.py
+Restart=on-failure
+RestartSec=15
+
+[Install]
+WantedBy=default.target
